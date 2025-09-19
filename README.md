@@ -14,7 +14,7 @@ A Django-based web application for detecting phishing websites using machine lea
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.11+ (specifically tested with Python 3.11.x)
 - Git
 
 ### Local Development
@@ -110,6 +110,8 @@ This application is configured for deployment on Render.com.
    - `SECRET_KEY`: Generate a secure secret key
    - `DEBUG`: `False`
    - `WEB_CONCURRENCY`: `4`
+   - `PYTHON_VERSION`: `3.11.11` (ensures correct Python version)
+   - `PORT`: `10000`
 
 4. **Deploy**
    - Click "Create Web Service"
