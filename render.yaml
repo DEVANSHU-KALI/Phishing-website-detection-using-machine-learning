@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: phishing-detector
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn Phising_website_Detection.wsgi:application --bind 0.0.0.0:$PORT"
+    plan: free
+    branch: main
+    region: oregon
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: WEB_CONCURRENCY
+        value: "4"
+      - key: PYTHON_VERSION
+        value: "3.11.11"
+      - key: PORT
+        value: "10000"
